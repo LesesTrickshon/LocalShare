@@ -13,6 +13,9 @@
 ./frontend/dist-ssr
 ./frontend/*.local
 
+./frontend/eslint.config.js
+./frontend/bun.lock
+
 ## Editor directories and files
 ./frontend/.vscode/*
 ./frontend/!.vscode/extensions.json
