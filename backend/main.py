@@ -21,10 +21,13 @@ print(WWW_DIR)
 
 app = Flask(__name__)
 
+# API Routes:
+## Main Website:
 @app.route("/")
 def index():
     return send_file("./www/index.html"), 200
 
+## Grabing Website Files (like style.css)
 @app.route("/www/<filename>")
 def www_access(filename):
     filepath = os.path.join(WWW_DIR, filename)
@@ -33,6 +36,7 @@ def www_access(filename):
     else:
         return f"<h1>404</h1><p>Could not find the file {filename}</p>", 404
     
+## Find Device:
 @app.route("/source")
 def source():
     device_data = {
